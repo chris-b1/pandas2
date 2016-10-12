@@ -82,7 +82,10 @@ class PANDAS_EXPORT Buffer {
   // other buffer
   bool is_shared() const { return static_cast<bool>(parent_); }
 
-  const std::shared_ptr<Buffer> parent() const { return parent_; }
+  std::shared_ptr<Buffer> parent() const { return parent_; }
+
+  // Copy the indicated byte range into a newly-created buffer
+  Status Copy(int64_t start, int64_t nbytes, std::shared_ptr<Buffer>* out) const;
 
  protected:
   bool is_mutable_;

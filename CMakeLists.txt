@@ -615,8 +615,7 @@ set(PANDAS_SRCS
 
   src/pandas/types/boolean.cc
   src/pandas/types/category.cc
-  src/pandas/types/integer.cc
-  src/pandas/types/floating.cc
+  src/pandas/types/numeric.cc
 )
 
 add_library(pandas SHARED
